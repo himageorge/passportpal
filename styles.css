@@ -219,22 +219,4 @@ input[type="date"]:focus {
 }
 
 
-/* ------------------------------------------ */
-/* MOBILE RESPONSIVE */
-/* ------------------------------------------ */
-@media (max-width: 640px) {}
-    .hero-header {
-        padding: 4rem 1rem;
-    }
-
-    .hero-content h1 {
-        font-size: 2.2rem;
-    }
-
-    .search-card {
-        padding: 1.25rem;
-    }
-
-    .result-row {
-        padding: 0.8rem 1rem;
-    }
+    

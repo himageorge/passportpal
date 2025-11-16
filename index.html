@@ -1,9 +1,8 @@
 <!DOCTYPE html>
 <html lang="en"> 
-    <head>
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
     <title>PASSPORT PAL</title>
     <link rel="stylesheet" href="styles.css">
     <script src="script.js" defer></script>
@@ -11,39 +10,36 @@
 <body> 
     <header class="hero-header">
         <div class="hero-content">
-            <h1> PASSPORT PAL</h1>
-            <p> Your smart and reliable Travel buddy</p>
+            <h1>PASSPORT PAL</h1>
+            <p>Your smart and reliable Travel buddy</p>
         </div>
     </header>
-    <main class = "container">
-        <section class ="intro">
-            <h2> Navigating your next big trip</h2>
-            <p> Planning a trip can be overwhelming, but with Passport Pal, you have a trusted companion to guide you every step of the way. From visa requirements to local customs, we've got you covered.</p>
+    
+    <main class="container">
+        <section class="intro">
+            <h2>Navigating your next big trip</h2>
+            <p>Planning a trip can be overwhelming, but with Passport Pal, you have a trusted companion to guide you every step of the way. From visa requirements to local customs, we've got you covered.</p>
+            
             <section class="search-card">
-            <form class="search-form">
-                <div class="form-row">
-
-                    <div class="form-group">
-                        <label for="citizenship">Citizenship</label>
-                        <select id="citizenship">
-                            <option value="">Select citizenship</option>
-                            <option value="nigeria">Nigeria</option>
-                            <option value="canada">Canada</option>
-                            <option value="uk">United Kingdom</option>
-                            <option value="india">India</option>
-                        </select>
+                <form class="search-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="citizenship">Citizenship</label>
+                            <select id="citizenship">
+                                <option value="">Select citizenship</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="departure-date">Departure Date</label>
+                            <input type="date" id="departure-date" />
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <label for="departure-date">Departure Date</label>
-                        <input type="date" id="departure-date" />
-                    </div>
-
-                </div>
-                <button type="submit" class="primary-btn">Find Destinations</button>
-            </form>
+                    <button type="submit" class="primary-btn">Find Destinations</button>
+                </form>
+            </section>
         </section>
-        </section>
-         <section class="results">
+        
+        <section class="results">
             <h3>Possible Destinations</h3>
             <div class="results-list">
                 <div class="result-row">
@@ -51,17 +47,24 @@
             </div>
         </section>
     </main>
-    <footer class="site-footer">
-    <div class="footer-content">
-        <p>© 2024 Passport Pal. All rights reserved.</p>
-
-        <div class="footer-links">
-            <a href="#">Privacy Policy</a>
-            <a href="#">Terms of Service</a>
-            <a href="#">Contact</a>
+    
+    <div class="visa-modal" id="visaModal">
+        <div class="visa-modal-content">
+            <span class="close-modal">&times;</span>
+            <h2 class="modal-country-name"></h2>
+            <div class="modal-body"></div>
         </div>
     </div>
-</footer>
-
+    
+    <footer class="site-footer">
+        <div class="footer-content">
+            <p>© 2024 Passport Pal. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+                <a href="#">Contact</a>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>
