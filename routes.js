@@ -138,6 +138,7 @@ router.post('/visa/map', async (request, response) => {
     if (!RAPIDAPI_KEY || !RAPIDAPI_HOST) {
         return response.status(500).json({ error: 'Server configuration error: RapidAPI keys are missing in .env.' });
     }
+    console.log('Received /visa/map request with body:', request.body);
 
     const options = {
         method: 'POST',
