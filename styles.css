@@ -1,0 +1,240 @@
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    background: #f5f5f7;
+    color: #111827;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 1.5rem;
+}
+
+
+/* ------------------------------------------ */
+/* HERO HEADER BACKGROUND IMAGE */
+/* ------------------------------------------ */
+.hero-header {
+    position: relative;
+    background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCl4p6z1E7sJGgulW-VzK1IdwhX13qhcyyuQ&s.png"); 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    padding: 5rem 1rem;
+    text-align: center;
+    color: white;
+}
+
+/* dark overlay */
+.hero-header::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.45);
+    z-index: 0;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+.hero-content h1 {
+    font-size: 2.8rem;
+    margin-bottom: 0.5rem;
+    letter-spacing: 1px;
+    font-weight: 700;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    margin: 0;
+    opacity: 0.95;
+}
+
+
+
+.intro{
+    text-align: center;
+    margin: 2.5rem 0 2rem;
+}
+
+.intro h2 {
+    margin: 0 0 0.5rem;
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.intro p {
+    margin: 0;
+    color: #4b5563;
+    font-size: 0.95rem;
+}
+
+
+
+.search-card {
+    background: #ffffff;
+    border-radius: 14px;
+    padding: 1.75rem;
+    box-shadow: 0 18px 40px rgba(15, 23, 42, 0.08);
+    margin-bottom: 2.25rem;
+}
+
+.form-row {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.form-group {
+    flex: 1 1 250px;
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin-bottom: 0.35rem;
+}
+
+select,
+input[type="date"] {
+    padding: 0.6rem 0.7rem;
+    border-radius: 8px;
+    border: 1px solid #d1d5db;
+    font-size: 0.95rem;
+    background: #ffffff;
+}
+
+select:focus,
+input[type="date"]:focus {
+    outline: none;
+    border-color: #2563eb;
+    box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.15);
+}
+
+.primary-btn {
+    display: block;
+    margin: 1.5rem auto 0;
+    padding: 0.75rem 2.5rem;
+    border-radius: 999px;
+    font-size: 1rem;
+    font-weight: 600;
+    background: #1d4ed8;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.primary-btn:hover {
+    background: #1e40af;
+}
+
+/* hide results by default */
+.results {
+    display: none;    
+    margin-top: 2rem;
+}
+
+.results h3 {
+    margin-bottom: 0.75rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.results-list {
+    background: #ffffff;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 12px 30px rgba(15, 23, 42, 0.05);
+}
+
+.result-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.95rem 1.25rem;
+    border-bottom: 1px solid #e5e7eb;
+    font-size: 0.98rem;
+}
+
+.result-row:last-child {
+    border-bottom: none;
+}
+
+.country-name {
+    font-weight: 500;
+}
+
+.visa-status {
+    color: #4b5563;
+}
+
+ /* ------------------------------ */
+/* FOOTER */
+/* ------------------------------ */
+
+.site-footer {
+    background: #ffffff;
+    padding: 2rem 1rem;
+    margin-top: 3rem;
+    border-top: 1px solid #e5e7eb;
+}
+
+.footer-content {
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.site-footer p {
+    margin: 0;
+    color: #4b5563;
+    font-size: 0.9rem;
+}
+
+.footer-links {
+    margin-top: 0.75rem;
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.footer-links a {
+    text-decoration: none;
+    color: #1d4ed8;
+    font-size: 0.9rem;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}
+
+
+/* ------------------------------------------ */
+/* MOBILE RESPONSIVE */
+/* ------------------------------------------ */
+@media (max-width: 640px) {}
+    .hero-header {
+        padding: 4rem 1rem;
+    }
+
+    .hero-content h1 {
+        font-size: 2.2rem;
+    }
+
+    .search-card {
+        padding: 1.25rem;
+    }
+
+    .result-row {
+        padding: 0.8rem 1rem;
+    }
