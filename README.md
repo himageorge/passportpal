@@ -10,10 +10,10 @@ Passport Pal is a web application that helps travelers quickly discover visa req
 
 ✨ **Smart Visa Lookup** - Select your citizenship and instantly see all possible travel destinations
 🎨 **Color-Coded Requirements** - Visual indicators for visa requirements:
-- 🟢 Green: Visa free 
+- 🟢 Green: Visa free / Freedom of movement
 - 🔵 Blue: Visa on arrival / eVisa
 - 🟡 Yellow: eTA / Visa waiver / Registration required
-- 🔴 Red: Visa required
+- 🔴 Red: Full visa required
 
 📋 **Detailed Information** - Click any destination to view:
 - Primary and secondary visa rules
@@ -26,20 +26,16 @@ Passport Pal is a web application that helps travelers quickly discover visa req
 ## Tech Stack
 
 ### Frontend
-- **HTML** 
+- **HTML5**
 - **CSS3** 
-- **Vanilla JavaScript** 
+- **JavaScript** 
+
 ### Backend
 - **Node.js** - Runtime environment
 - **Express.js** - Web server framework
-- **Axios** - HTTP client for API requests
-- **CORS** - Cross-origin resource sharing
 
 ### API
 - [RapidAPI Visa Requirements API](https://rapidapi.com/Travel-Buddy/api/visa-requirement) - Visa data provider
-
----
-
 
 ---
 
@@ -55,7 +51,7 @@ Passport Pal is a web application that helps travelers quickly discover visa req
 1. **Clone the repository**
 ```bash
 git clone <your-repo-url>
-cd passport-pal/
+cd passport-pal/backend
 ```
 
 2. **Install dependencies**
@@ -86,8 +82,7 @@ Server will run on `http://localhost:3001`
 
 ### Frontend Setup
 
-**Open with a local server**
-
+VS Code Live Server extension
 Frontend will run on `http://localhost:5500` (or your preferred port)
 
 ---
@@ -123,21 +118,52 @@ Gets detailed visa requirements for specific passport-destination pair
 5. **Click for Details** - Click any destination to see detailed visa information
 
 ---
+## Known Issues
 
-
-## Future Enhancements
-
-- [ ] Implement departure date filtering
-- [ ] Add destination search/filter functionality
-- [ ] Cache API responses to reduce rate limiting
-- [ ] Add country flags to results
-- [ ] Export results to PDF
-- [ ] Mobile-responsive modal positioning
-- [ ] Dark mode support
-- [ ] Multi-language support
+1. **Territory Codes**: Some destinations may show as codes (e.g., "AW") instead of names if they're not in the destinations list
+2. **Self-Country Bug**: API sometimes includes home country in red category (filtered in frontend)
 
 ---
 
-## License
+## Future Enhancements
 
-This project is licensed under the MIT Licen
+### Phase 1: Core Features
+- [ ] Implement departure date filtering
+
+### Phase 2: User Management & Documents
+- [ ] **User Authentication System**
+
+- [ ] **Document Checklist Feature**
+  - Interactive checklist showing required documents
+  - Mark documents as "Completed" 
+  - Document expiry date tracking and reminders
+
+- [ ] **User Document Dashboard**
+  - Personal document vault to store:
+    - Passport scans/photos
+    - Visa copies
+    - Travel insurance documents
+    - Vaccination certificates
+    - ID photos
+  - Document expiry notifications
+  - Quick access when planning trips
+
+- [ ] **Trip Planning Integration**
+  - Save planned destinations
+  - Track document status per destination
+
+- [ ] **Smart Recommendations**
+  - AI-powered document suggestions based on destination
+  - Country-specific document requirements
+  - Processing time estimates for visas
+  - Cost estimates for visa applications
+
+### Phase 3: Enhanced UX
+- [ ] Dark mode support
+- [ ] Multi-language support
+- [ ] Email notifications for document expiry
+- [ ] Mobile app (React Native)
+
+---
+
+---
