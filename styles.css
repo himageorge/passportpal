@@ -22,7 +22,7 @@ body {
 /* ------------------------------------------ */
 .hero-header {
     position: relative;
-    background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCl4p6z1E7sJGgulW-VzK1IdwhX13qhcyyuQ&s.png"); 
+    background-image: url("https://wallpapers.com/images/high/pastel-sunset-beachscape-fa4vf999qu7i20dr.png"); 
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -61,23 +61,29 @@ body {
 
 
 
-.intro{
+.intro {
     text-align: center;
-    margin: 2.5rem 0 2rem;
+    /* smaller top margin (moves heading UP), bigger bottom margin (adds space before white box) */
+    margin: 1.2rem 0 7rem;
 }
 
 .intro h2 {
-    margin: 0 0 0.5rem;
-    font-size: 2rem;
+    margin: 0 0 1rem;   /* more space between heading and paragraph */
+    font-size: 2.2rem;  /* a little larger, so it stands out more */
     font-weight: 700;
 }
 
 .intro p {
-    margin: 0;
+   .intro p {
+    margin: 0 0 2.5rem;   /* increase bottom margin */
     color: #4b5563;
     font-size: 0.95rem;
+    line-height: 1.5;
+    max-width: 650px;
+    margin-left: auto;
+    margin-right: auto;
+   }
 }
-
 
 
 .search-card {
@@ -144,11 +150,33 @@ input[type="date"]:focus {
     display: none;    
     margin-top: 2rem;
 }
+/* Container of each collapsible section */
+.results-list {
+    overflow: hidden;
+    max-height: 0;               /* collapsed by default */
+    transition: max-height 0.35s ease, opacity 0.25s ease;
+    opacity: 0;
+}
 
-.results h3 {
-    margin-bottom: 0.75rem;
+/* When expanded */
+.results-list.expanded {
+    opacity: 1;
+}
+
+/* Header styling */
+.visa-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 0;
     font-size: 1.2rem;
-    font-weight: 600;
+    font-weight: 900;
+    cursor: pointer;
+    user-select: none;
+}
+
+.toggle-arrow {
+    transition: transform 0.3s ease;
 }
 
 .results-list {

@@ -18,7 +18,8 @@
     <main class="container">
         <section class="intro">
             <h2>Navigating your next big trip</h2>
-            <p>Planning a trip can be overwhelming, but with Passport Pal, you have a trusted companion to guide you every step of the way. From visa requirements to local customs, we've got you covered.</p>
+
+            <p>Passport Pal, a trusted companion to guide as you plan your next holiday!</p>
             
             <section class="search-card">
                 <form class="search-form">
@@ -39,14 +40,35 @@
             </section>
         </section>
         
-        <section class="results">
-            <h3>Possible Destinations</h3>
-            <div class="results-list">
-                <div class="result-row">
-                </div>
-            </div>
-        </section>
-    </main>
+       <section class="results">
+    <h3>Possible Destinations</h3>
+
+    <!-- Visa-Free Section -->
+     <div class="visa-group">
+        <div class="visa-header" data-target="visa-free">
+            <span>Visa-Free</span>
+            <span class="toggle-arrow">▼</span>
+        </div>
+        <div id="visa-free" class="results-list"></div>
+    </div>
+
+    <div class="visa-group">
+        <div class="visa-header" data-target="visa-arrival">
+            <span>Visa on Arrival / eVisa</span>
+            <span class="toggle-arrow">▼</span>
+        </div>
+        <div id="visa-arrival" class="results-list"></div>
+    </div>
+
+    <div class="visa-group">
+        <div class="visa-header" data-target="visa-required">
+            <span>Visa Required</span>
+            <span class="toggle-arrow">▼</span>
+        </div>
+        <div id="visa-required" class="results-list"></div>
+    </div>
+</section>
+</section>
     
     <div class="visa-modal" id="visaModal">
         <div class="visa-modal-content">
