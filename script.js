@@ -10,6 +10,12 @@ document.addEventListener("DOMContentLoaded", () => {
     const citizenshipSelect = document.getElementById("citizenship");
     const dateInput = document.getElementById("departure-date");
     const resultsSection = document.querySelector(".results");
+    const COLOR_LABELS = {
+        green: "Visa free",
+        blue: "Visa on arrival / eVisa",
+        yellow: "eTA / visa waiver / registration",
+        red: "Visa required "
+    };
 
     const modal = document.getElementById("visaModal");
     const closeBtn = modal.querySelector(".close-modal");
@@ -135,7 +141,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 <div class="requirement-item secondary-rule">
                     <strong>Secondary Rule:</strong>
                     <div class="rule-details">
-                        <span class="rule-badge" style="background-color: ${secondaryRule.color}">
                             ${secondaryRule.name}
                         </span>
                         ${
