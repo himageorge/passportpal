@@ -1,9 +1,9 @@
 
     const COLOR_LABELS = {
-        green: "Visa free / freedom of movement",
+        green: "Visa free",
         blue: "Visa on arrival / eVisa",
         yellow: "eTA / visa waiver / registration",
-        red: "Visa required / full visa likely needed"
+        red: "Visa required "
     };
 
     document.addEventListener("DOMContentLoaded", () => {
@@ -90,7 +90,6 @@
                 <div class="requirement-item primary-rule">
                     <strong>Primary Rule:</strong>
                     <div class="rule-details">
-                        <span class="rule-badge" style="background-color: ${primaryRule.color}">
                             ${primaryRule.name || 'N/A'}
                         </span>
                         ${primaryRule.duration ? `<span class="duration">Duration: ${primaryRule.duration}</span>` : ''}
@@ -107,7 +106,6 @@
                 <div class="requirement-item secondary-rule">
                     <strong>Secondary Rule:</strong>
                     <div class="rule-details">
-                        <span class="rule-badge" style="background-color: ${secondaryRule.color}">
                             ${secondaryRule.name}
                         </span>
                         ${secondaryRule.duration !== 'N/A' ? `<span class="duration">Duration: ${secondaryRule.duration}</span>` : ''}
