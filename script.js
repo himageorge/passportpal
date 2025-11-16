@@ -1,5 +1,4 @@
-// script.js
-
+// script.jss
 // 1. Citizenship value -> passport ISO code
 const PASSPORT_CODES = {
     nigeria: "NG",
@@ -8,11 +7,6 @@ const PASSPORT_CODES = {
     india: "IN"
 };
 
-// 2. MAP endpoint (overview)
-const API_URL_MAP = "https://visa-requirement.p.rapidapi.com/v2/visa/map";
-
-// 3. Your API key (for now, hardcode it here just to get it working)
-const API_SECRET = process.env.API_KEY; // <-- put the real key here
 
 // 4. Color -> human label
 const COLOR_LABELS = {
@@ -28,6 +22,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const dateInput = document.getElementById("departure-date");
     const resultsSection = document.querySelector(".results");
     const resultsList = document.querySelector(".results-list");
+
+
 
     // hide results initially
     resultsSection.style.display = "none";
@@ -56,19 +52,19 @@ document.addEventListener("DOMContentLoaded", () => {
                 <span class="country-name">Loading...</span>
                 <span class="visa-status">Fetching visa info</span>
             </div>
-        `;
-
-        try {
-            const response = await fetch(API_URL_MAP, {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                    "X-RapidAPI-Proxy-Secret": API_SECRET
-                },
-                body: JSON.stringify({ passport: passportCode })
-            });
-
-            const json = await response.json();
+        `; 
+    
+        document.querySelector('button').addEventListener('click', () => {
+        // URL where the GET request will be sent
+        fetch ('http://localhost:3001/api/visa/map')
+        // Obtains the text of the response in the form of a promise
+        .then(res => res.text())
+        // Changes the text of the paragraph to the response text
+        .then(msg => {document.querySelector('p').innerText = msg;
+        return msg;
+        })
+        .then(msg => {
+            const json = JSON.parse(msg);  
             const colorsObj = json?.data?.colors || {};
 
             // turn { green: "FR,DE", red: "CN", ... } into [{code, color}, ...]
@@ -102,18 +98,19 @@ document.addEventListener("DOMContentLoaded", () => {
 
                 resultsList.appendChild(row);
             });
+        });
 
-        } catch (error) {
-            console.error(error);
-            resultsList.innerHTML = `
-                <div class="result-row">
-                    <span class="country-name">Error</span>
-                    <span class="visa-status">Could not load visa data</span>
-                </div>
-            `;
-        }
+    //     } catch (error) {
+    //         console.error(error);
+    //         resultsList.innerHTML = `
+    //             <div class="result-row">
+    //                 <span class="country-name">Error</span>
+    //                 <span class="visa-status">Could not load visa data</span>
+    //             </div>
+    //         `;
+    //     }
+    // });
     });
-});
 
 // helper: convert colors object -> flat array
 function buildDestinationListFromMap(colorsObj) {
@@ -137,3 +134,6 @@ function buildDestinationListFromMap(colorsObj) {
 
     return result;
 }
+});
+});
+
